@@ -29,7 +29,8 @@ namespace UI
             if (PlanetarySystemFactory.planetarySystemObj != null)
                 Destroy(PlanetarySystemFactory.planetarySystemObj.gameObject);
             
-            factory.Create(double.Parse(massInputField.text));
+            if (!string.IsNullOrWhiteSpace(massInputField.text))
+                factory.Create(double.Parse(massInputField.text));
         }
     }
 }
